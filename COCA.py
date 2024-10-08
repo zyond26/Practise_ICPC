@@ -3,8 +3,8 @@
 #  Nam quyết định dùng số vỏ lon đang có để mua nhiều lon cô ca nhất có thể. Thậm chí những lon cô ca
 #  mới mua sau khi uống hết cũng được bán đi để mua lon mới.
 # Hãy viết chương trình tính xem nam có thể uống được tối đa bao nhiêu lon cô ca
-# INPUT: Nhập 3 số nguyên dương a,b,c lần lượt là số vỏ lon của Nam đang có, 
-# số vỏ lon của Nam kiếm thêm và số vỏ lon cần bán để có một lon cô ca mới.
+# INPUT: Nhập 3 số nguyên dương a,b,c lần lượt là số vỏ lon của Nam đang có, số vỏ lon của Nam kiếm thêm và số vỏ lon cần bán để 
+# có một lon cô ca mới.
 # OUTPUT: số lượng tối đa các lon co-ca mà Nam có thể uống.
 # vd1:9 0 3   => kết quả: 4; 
 # vd2: 5 5 2  ->kq: 9;  
