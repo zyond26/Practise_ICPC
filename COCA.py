@@ -23,8 +23,6 @@ def max_coca_drinks(a, b, c):
     
     return drinks
 
-# Nhập các giá trị a, b, c
 a, b, c = map(int, input("Nhập a, b, c: ").split())
 
-# Gọi hàm và in kết quả
 print("Số lượng tối đa các lon cô-ca mà Nam có thể uống là:", max_coca_drinks(a, b, c))

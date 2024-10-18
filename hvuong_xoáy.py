@@ -6,7 +6,7 @@
 
 
 def main():
-    N = 6
+    N = 5
     for i in range(N):
         line = ""
         for j in range(N):
