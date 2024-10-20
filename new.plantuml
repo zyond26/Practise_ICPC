@@ -1,0 +1,70 @@
+@startuml
+class User {
+    + ID: int
+    + Name: String
+    + Email: String
+    + Password: String
+    + register()
+    + login()
+    + updateProfile()
+}
+
+class Journalist {
+    + createArticle()
+    + editArticle()
+    + deleteArticle()
+    + watchStats()
+}
+
+class Admin {
+    + manageAccounts()
+    + manageArticles()
+    + manageCategories()
+    + manageComments()
+    + seeAllStats()
+    + approveRegistration()
+}
+
+class Article {
+    + ID: int
+    + Title: String
+    + Content: String
+    + PostedDate: Date
+    + ViewCount: int
+    + viewArticle()
+    + incrementViewCount()
+}
+
+class Comment {
+    + ID: int
+    + Content: String
+    + CommentDate: Date
+    + addComment()
+    + deleteComment()
+}
+
+class Category {
+    + ID: int
+    + Name: String
+    + addCategory()
+    + editCategory()
+    + deleteCategory()
+}
+
+class Advertisement {
+    + ID: int
+    + AdContent: String
+    + StartDate: Date
+    + EndDate: Date
+    + addAdvertisement()
+    + editAdvertisement()
+    + deleteAdvertisement()
+}
+
+User <|-- Journalist
+User <|-- Admin
+Article "1" -- "n" Comment
+Article "n" -- "1" Category
+Journalist "1" -- "n" Article
+Article "1" -- "n" Advertisement
+@enduml
