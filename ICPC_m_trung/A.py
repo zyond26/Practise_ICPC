@@ -1,19 +1,34 @@
-def thief(N, W, H, items):
-    dp = [0] * (W + 1)
-    
-    for wi, ci in items:
-        for w in range(W, wi - 1, -1):
-            dp[w] = max(dp[w], dp[w - wi] + ci)
-    
-    max_value = max(dp)
-    
-    for wi, ci in items:
+def max_thief_value(N, W, H, items):
+    items.sort(key=lambda x: x[1] / x[0], reverse=True)
+
+    max_value = 0
+
+    for i in range(N):
+        wi, ci = items[i]
+        
+        current_weight = 0
+        current_value = 0
+        
+        for j in range(N):
+            if j != i:  
+                wj, cj = items[j]
+                if current_weight + wj <= W:
+                    current_weight += wj
+                    current_value += cj
+        
         if wi <= H:
-            max_value = max(max_value, max(dp) + ci)
-    
+            max_value = max(max_value, current_value + ci)
+        else:
+            max_value = max(max_value, current_value)
+
     return max_value
 
 N, W, H = map(int, input().split())
-items = [tuple(map(int, input().split())) for _ in range(N)]
+items = []
 
-print(thief(N, W, H, items))
+for _ in range(N):
+    wi, ci = map(int, input().split())
+    items.append((wi, ci))
+
+result = max_thief_value(N, W, H, items)
+print(result) 

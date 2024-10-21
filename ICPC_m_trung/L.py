@@ -1,26 +1,37 @@
-def largest_number_digit(N, K):
-    numbers = [str(i) for i in range(1, N + 1)]
-    
-    numbers.sort(reverse=True, key=lambda x: x * 20)  
-    
-    total_length = 0
-    for number in numbers:
-        total_length += len(number)
-    
-    if K > total_length:
+from functools import cmp_to_key
+
+# so sánh hai chuỗi để tạo số lớn nhất
+def compare(x, y):
+    if x + y > y + x:
         return -1
+    elif x + y < y + x:
+        return 1
+    else:
+        return 0
+
+def find_digit(N, K):
+    digits = [str(i) for i in range(1, N + 1)]  
     
-    current_length = 0
-    for number in numbers:
-        current_length += len(number)
-        if current_length >= K:
-            return number[K - (current_length - len(number)) - 1]
+    # Sắp xếp các số theo thứ tự để tạo ra số lớn nhất
+    digits.sort(key=cmp_to_key(compare))  
+    
+    largest_number = ''.join(digits)  
+    
+    if len(largest_number) >= K:
+        return largest_number[K - 1]  
+    else:
+        return -1  
 
-T = int(input())
-results = []
-for _ in range(T):
-    N, K = map(int, input().split())
-    results.append(largest_number_digit(N, K))
+def solve():
+    T = int(input())  
+    results = []
+    
+    for _ in range(T):
+        N, K = map(int, input().split())  
+        results.append(find_digit(N, K))  
+    
+    for result in results:
+        print(result)
 
-for result in results:
-    print(result)
+if __name__ == "__main__":
+    solve()
