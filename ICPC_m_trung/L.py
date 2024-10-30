@@ -1,6 +1,5 @@
 from functools import cmp_to_key
 
-# so sánh hai chuỗi để tạo số lớn nhất
 def compare(x, y):
     if x + y > y + x:
         return -1
@@ -12,7 +11,6 @@ def compare(x, y):
 def find_digit(N, K):
     digits = [str(i) for i in range(1, N + 1)]  
     
-    # Sắp xếp các số theo thứ tự để tạo ra số lớn nhất
     digits.sort(key=cmp_to_key(compare))  
     
     largest_number = ''.join(digits)  
