@@ -2,4 +2,4 @@
 
 luyện tập các bài toán để thi ICPC
 
-* tổng hợp rất nhiều đề icpc các năm
+- chủ yếu là làm bài tập 3 miền năm 2024 
