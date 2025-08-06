@@ -2,4 +2,4 @@
 
 luyện tập các bài toán để thi ICPC
 
-dùng ngôn ngữ Python vì cú pháp dễ dùng
+* tổng hợp rất nhiều đề icpc các năm
